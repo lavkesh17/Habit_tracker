@@ -1,0 +1,66 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: rgb(14, 7, 36);
+}
+
+.habit-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px;
+}
+
+.habit-values-container {
+  overflow: hidden;
+  width: 200px;
+  text-align: center;
+}
+
+.habit-title {
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.habit-unit {
+  color: white;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.card {
+  margin: 10px;
+  background-color: rgb(14, 7, 36);
+  background-color: rgb(7, 155, 22);
+  background-color: rgb(201, 8, 8);
+  min-height: 100px;
+  min-width: 100px;
+  height: 15vh;
+  width: 15vh;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  border-radius: 25px;
+  border: 2px solid whitesmoke;
+  overflow: hidden;
+}
+
+.card:hover {
+  cursor: pointer;
+}
+
+.habit-dates {
+  margin: auto;
+  text-align: center;
+}
+
+.habit-delete {
+  margin-left: 20px;
+  font-size: 50px;
+  color: white;
+}
+
+.habit-delete:hover {
+  cursor: pointer;
+}
