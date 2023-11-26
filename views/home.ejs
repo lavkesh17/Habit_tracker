@@ -1,0 +1,35 @@
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/css/home.css" />
+    <link rel="stylesheet" href="/css/navbar.css" />
+  </head>
+  <body>
+    <%- include('./partials/_navbar.ejs') %> <% for(let j =0 ; j < habits.length; j++){ %>
+    <div class="habit-container">
+      <div class="habit-values-container">
+        <h2 class="habit-title"><%= habits[j].name %></h2>
+        <h3 class="habit-unit"><%= habits[j].unit_value %> <%= habits[j].unit %></h3>
+      </div>
+      <% for(let i = 0; i < 7; i++){ %>
+      <a href="/change/?habit_id=<%= habits[j].id %>&dailyHabit=<%= completed[j][i].id %>">
+        <% if(completed[j][i].completed == "None") {%>
+          <div class="card" style="background-color: rgb(14, 7, 36);">
+        <% } else if(completed[j][i].completed == "Yes") { %>    
+          <div class="card" style="background-color: rgb(7, 155, 22);">
+        <% } else { %>
+          <div class="card" style="background-color: rgb(201, 8, 8);">
+        <% } %>    
+          <div class="habit-dates">
+            <%= dates[i].date %>th <%= dates[i].month %>
+          </div>
+        </div>
+      </a>
+      <% } %>
+      <div class="habit-delete">
+        <a href="/delete/?habit_id=<%= habits[j].id %>">🗑</a>
+      </div>
+    </div>
+    <% } %>
+  </body>
+</html>
